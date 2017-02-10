@@ -1,1 +1,1 @@
-fuck
+"hello" from the server
