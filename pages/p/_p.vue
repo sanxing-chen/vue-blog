@@ -9,14 +9,20 @@
 <script>
     import ToolBar from '~components/ToolBar.vue'
     import QrCode from '~components/QrCode.vue'
+    import hljs from 'highlight.js/lib/highlight'
+
+    ['javascript', 'css', 'bash', 'stylus', 'cpp'].forEach((langName) => {
+        // https://bjacobel.com/2016/12/04/highlight-bundle-size/
+        const langModule = require(`highlight.js/lib/languages/${langName}`);
+        hljs.registerLanguage(langName, langModule);
+    });
     var axios = require('axios'),
-        hljs = require('highlight.js'),
         md = require('markdown-it')({
             html: true,
             linkify: true,
             typographer: true,
             highlight: function (str, lang) {
-                if (lang && hljs.getLanguage(lang)) {
+                if (lang) {
                     try {
                         return hljs.highlight(lang, str).value;
                     } catch (__) { }
