@@ -7,9 +7,9 @@ Just change the `.md` to write a blog, rendered in the front-end.
     git clone
     npm i
 
-Just change or add markdown files in the `static` folde.r
+Just change or add markdown files in the `static` folder.
 
     npm run dev //develop
-    npm run gen //generate static pages
+    npm run gen //generate HTML files
 
 The pages will be in your `dist` folder. 
