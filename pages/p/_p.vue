@@ -61,7 +61,7 @@
         }
     }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .post-container
     margin 5em 5vw
     position relative
