@@ -61,7 +61,7 @@
         }
     }
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus">
 .post-container
     margin 5em 5vw
     position relative
@@ -97,7 +97,6 @@ hr
     color #2c3e50
 a
     color #42b983
-    font-weight 500
     text-decoration none
 blockquote
     margin 2em 0
