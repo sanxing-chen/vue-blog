@@ -13,9 +13,9 @@
 
     ['javascript', 'css', 'bash', 'stylus', 'cpp'].forEach((langName) => {
         // https://bjacobel.com/2016/12/04/highlight-bundle-size/
-        const langModule = require(`highlight.js/lib/languages/${langName}`);
-        hljs.registerLanguage(langName, langModule);
-    });
+        const langModule = require(`highlight.js/lib/languages/${langName}`)
+        hljs.registerLanguage(langName, langModule)
+    })
     var axios = require('axios'),
         md = require('markdown-it')({
             html: true,
@@ -24,11 +24,11 @@
             highlight: function (str, lang) {
                 if (lang) {
                     try {
-                        return hljs.highlight(lang, str).value;
+                        return hljs.highlight(lang, str).value
                     } catch (__) { }
                 }
 
-                return ''; // use external default escaping
+                return '' // use external default escaping
             }
         })
             .use(require('markdown-it-sub'))
@@ -45,13 +45,13 @@
         components: {
             ToolBar, QrCode
         },
-        data() {
+        data () {
             return {
                 content: '',
                 title: '404 - Got Lost'
             }
         },
-        mounted() {
+        mounted () {
             axios.get('/' + this.$route.params.p + '.md')
                 .then(res => {
                     this.title = this.$route.params.p

@@ -12,11 +12,11 @@ module.exports = {
     build: {
         analyze: true,
         plugins: [
-                new webpack.ContextReplacementPlugin(
-                    /highlight\.js\/lib\/languages$/,
-                    new RegExp(`^./(${['javascript', 'css', 'bash', 'stylus', 'cpp'].join('|')})$`)
-                )
-            ]
+            new webpack.ContextReplacementPlugin(
+                /highlight\.js\/lib\/languages$/,
+                new RegExp(`^./(${['javascript', 'css', 'bash', 'stylus', 'cpp'].join('|')})$`)
+            )
+        ]
     },
     generate: {
         routeParams: {
@@ -26,15 +26,14 @@ module.exports = {
                     params
                 fs.readdir('./static', function (e, f) {
                     params = f.map((v) => {
-                        if (/.+\.md/.test(v))
-                            return { p: v.substr(0, v.length - 3) }
+                        if (/.+\.md/.test(v)) { return { p: v.substr(0, v.length - 3) } }
                     }).filter((v) => {
-                        return v != undefined
+                        return v !== undefined
                     })
                     callback(null, params)
                 })
             }
         }
-    },
+    }
 
 }

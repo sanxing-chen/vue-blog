@@ -9,19 +9,19 @@ export default {
         }
     },
     created () {
-        this.buildQrcode()   
+        this.buildQrcode()
     },
     methods: {
         buildQrcode () {
             if (process.BROWSER_BUILD) {
                 this.$nextTick(() => {
-                const jrQrcode = require('jr-qrcode')
-                let base64 = jrQrcode.getQrBase64(window.location.href, {
-                    correctLevel: 1,
-                    foreground: '#42b983'
-                })
-                this.qrcode = base64
-                console.log(base64)
+                    const jrQrcode = require('jr-qrcode')
+                    let base64 = jrQrcode.getQrBase64(window.location.href, {
+                        correctLevel: 1,
+                        foreground: '#42b983'
+                    })
+                    this.qrcode = base64
+                    console.log(base64)
                 })
             }
             // console.log(process.BROWSER_BUILD)
