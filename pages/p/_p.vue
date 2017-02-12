@@ -16,8 +16,8 @@
         const langModule = require(`highlight.js/lib/languages/${langName}`)
         hljs.registerLanguage(langName, langModule)
     })
-    var axios = require('axios'),
-        md = require('markdown-it')({
+    var axios = require('axios')
+    var md = require('markdown-it')({
             html: true,
             linkify: true,
             typographer: true,

@@ -11,7 +11,7 @@
     "dev": "nuxt",
     "gen": "nuxt generate",
     "build": "nuxt build -a",
-    "lint": "eslint --ext .js,.vue . --fix"
+    "lint": "eslint --ext .js,.vue ."
   },
   "dependencies": {
     "axios": "^0.15.3",

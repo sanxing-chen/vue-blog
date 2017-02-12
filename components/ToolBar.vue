@@ -25,8 +25,8 @@ export default {
         }
     },
     mounted () {
-        let body = document.getElementsByTagName('body')[0],
-            that = this
+        let body = document.getElementsByTagName('body')[0]
+        let that = this
         window.document.addEventListener('scroll', (e) => {
             if (body.scrollTop > 207) that.fixTop = true
             else that.fixTop = false
