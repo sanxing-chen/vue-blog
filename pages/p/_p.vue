@@ -45,18 +45,11 @@
         components: {
             ToolBar, QrCode
         },
-        data () {
-            return {
-                content: '',
-                title: '404 - Got Lost'
-            }
+        async data ({ params }) {
+            let { data } = await axios.get('http://127.0.0.1:3000/' + params.p + '.md')
+            return  { title: params.p, content: md.render(data) }
         },
-        mounted () {
-            axios.get('/' + this.$route.params.p + '.md')
-                .then(res => {
-                    this.title = this.$route.params.p
-                    this.content = md.render(res.data)
-                })
+        beforeMount () {
             hljs.initHighlighting()
         }
     }
