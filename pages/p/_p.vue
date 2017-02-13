@@ -18,19 +18,19 @@
     })
     var axios = require('axios')
     var md = require('markdown-it')({
-            html: true,
-            linkify: true,
-            typographer: true,
-            highlight: function (str, lang) {
-                if (lang) {
-                    try {
-                        return hljs.highlight(lang, str).value
-                    } catch (__) { }
-                }
-
-                return '' // use external default escaping
+        html: true,
+        linkify: true,
+        typographer: true,
+        highlight: function (str, lang) {
+            if (lang) {
+                try {
+                    return hljs.highlight(lang, str).value
+                } catch (__) { }
             }
-        })
+
+            return '' // use external default escaping
+        }
+    })
             .use(require('markdown-it-sub'))
             .use(require('markdown-it-sup'))
             .use(require('markdown-it-footnote'))
@@ -47,7 +47,7 @@
         },
         async data ({ params }) {
             let { data } = await axios.get('http://127.0.0.1:3000/' + params.p + '.md')
-            return  { title: params.p, content: md.render(data) }
+            return { title: params.p, content: md.render(data) }
         },
         beforeMount () {
             hljs.initHighlighting()
