@@ -18,7 +18,7 @@
     })
     var axios = require('axios')
     var md = require('markdown-it')({
-        html: true,
+        html: false,
         linkify: true,
         typographer: true,
         highlight: function (str, lang) {
