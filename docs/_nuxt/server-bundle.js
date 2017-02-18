@@ -2256,7 +2256,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 var axios = __webpack_require__(174);
 var md = __webpack_require__(175)({
-    html: true,
+    html: false,
     linkify: true,
     typographer: true,
     highlight: function highlight(str, lang) {
