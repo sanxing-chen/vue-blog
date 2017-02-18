@@ -48,7 +48,7 @@ export default {
     z-index 33
     color white
     box-sizing border-box
-    transition box-shadow .4s
+    transition box-shadow .4s, opacity .4s
 .fix-top
     position fixed
     min-height 64px
@@ -64,6 +64,7 @@ export default {
     box-shadow 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24)
 .fix-top-shadow-on
     box-shadow 0px 0px 8px 0px rgba(0,0,0,0.12), 0px 8px 8px 0px rgba(0,0,0,0.24)
+    opacity 0.95
 .peekaboo
     height 256px
     padding 115px 14em 0

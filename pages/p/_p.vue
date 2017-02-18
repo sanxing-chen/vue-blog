@@ -47,7 +47,10 @@
         },
         async data ({ params }) {
             let { data } = await axios.get('http://127.0.0.1:3000/' + params.p + '.md')
-            return { title: params.p, content: md.render(data) }
+            let title = params.p.split('-').map((s) => {
+                return s[0].toUpperCase() + s.substr(1).toLowerCase()
+            }).join(' ')
+            return { title: title, content: md.render(data) }
         },
         beforeMount () {
             hljs.initHighlighting()
