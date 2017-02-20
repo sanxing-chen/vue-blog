@@ -3,18 +3,20 @@
         <div class="note">
             Boring &nbsp&nbsp&nbsp&nbsp <a href="/p/Markdown-Demo" id="nlink">Normal</a> &nbsp&nbsp&nbsp&nbsp Me
         </div>
-        <card bgColor="black">
-            <img class="cool" src="img/photo.jpg"></img>
-            <div class="card-note" style="color: white"> STAY CHAN</div>
-        </card>
-        <card bgColor="#03a9f4" href="https://material.io">
-            <img class="cool" src="img/material.png"/>
-            <div class="card-note" style="color: white"> MATERIAL DESIGN</div>
-        </card>
-        <card bgColor="#f6f6f6" href="https://vuejs.org">
-            <img class="cool" src="img/vue.png" style="width: 100px; margin: 100px"/>
-            <div class="card-note" style="color: #41b883"> WITH VUE.JS </div>
-        </card>
+        <div class="card-container">
+            <card bgColor="black">
+                <img class="cool" src="img/photo.jpg"></img>
+                <div class="card-note" style="color: white"> STAY CHAN</div>
+            </card>
+            <card bgColor="#03a9f4" href="https://material.io">
+                <img class="cool" src="img/material.png"/>
+                <div class="card-note" style="color: white"> MATERIAL DESIGN</div>
+            </card>
+            <card bgColor="#f6f6f6" href="https://vuejs.org">
+                <img class="cool" src="img/vue.png" style="width: 100px; margin: 100px"/>
+                <div class="card-note" style="color: #41b883"> WITH VUE.JS </div>
+            </card>
+        </div>
     </div>
 </template>
 <script>
@@ -50,6 +52,9 @@ a
     top 15em
     margin 2em 4em
     vertical-align top
+@media screen and (min-width: 900px)
+    .card-container
+        margin-left 10%
 @media screen and (max-width: 900px)
     .container
         text-align center
